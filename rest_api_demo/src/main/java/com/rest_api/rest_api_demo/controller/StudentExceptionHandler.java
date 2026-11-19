@@ -32,7 +32,8 @@ public class StudentExceptionHandler {
     StudentErrorResponse err = new StudentErrorResponse();
 
     err.setStatus(HttpStatus.BAD_REQUEST.value());
-    err.setMessage("Invalid data. Only integers are accepted.");
+   // err.setMessage("Invalid data. Only integers are accepted.");
+   err.setMessage(ex.getMessage());
     err.setTimeStamp(System.currentTimeMillis());
 
     return new ResponseEntity<>(err, HttpStatus.BAD_REQUEST);
